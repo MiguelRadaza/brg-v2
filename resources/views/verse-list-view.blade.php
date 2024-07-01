@@ -52,7 +52,7 @@
                 </p>
             </div>
 
-            @if (Session::has('coming-soon'))
+            @if (Session::has('message'))
                 <div class="col-12 mt-5">
                     <div class="alert alert-info nomargin alert-dismissible fade show" role="alert">
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"
