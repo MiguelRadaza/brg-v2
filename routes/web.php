@@ -24,7 +24,6 @@ Route::get('/auth/callback', function () {
     ], [
         'name' => $discordUser->name,
         'avatar' => $discordUser->avatar,
-        'email' => $discordUser->email,
         'discord_token' => $discordUser->token,
         'discord_refresh_token' => $discordUser->refreshToken,
     ]);
