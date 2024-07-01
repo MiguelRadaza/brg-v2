@@ -18,6 +18,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'email',
+        'password',
+        'discord_id',
+        'discord_token',
+        'discord_refresh_token',
+        'avatar',
     ];
 
     /**
