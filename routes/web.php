@@ -29,7 +29,7 @@ Route::get('/auth/callback', function () {
         'discord_refresh_token' => $discordUser->refreshToken,
     ]);
     Auth::login($user);
-    return redirect('/grid')->with('coming-soon');
+    return redirect('/grid')->with('message', 'announcement');
 });
 
 
