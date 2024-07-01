@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'Bible Reading Guide',
     'manifest' => [
         'name' => env('APP_NAME', 'BRG'),
         'short_name' => 'PWA',
-        'start_url' => '/grid',
+        'start_url' => './',
         'background_color' => '#ffffff',
         'theme_color' => '#008080',
         'display' => 'standalone',
