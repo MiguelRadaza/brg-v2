@@ -32,7 +32,7 @@
                     </button>
                     <div class="dropdown-menu" role="menu">
                         @foreach ($availableMonths as $availableMonth)
-                            <a class="dropdown-item text-1" href="{{ route('home', strtolower($availableMonth)) }}">
+                            <a class="dropdown-item text-1" href="{{ url('grid', strtolower($availableMonth)) }}">
                                 {{ ucfirst($availableMonth) }}
                             </a>
                         @endforeach
