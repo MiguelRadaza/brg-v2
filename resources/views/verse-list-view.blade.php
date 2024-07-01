@@ -51,6 +51,27 @@
                 </div>
                 </p>
             </div>
+
+            @if (Session::has('coming-soon'))
+                <div class="col-12 mt-5">
+                    <div class="alert alert-info nomargin alert-dismissible fade show" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"
+                            aria-label="Close"></button>
+                        <h4 class="font-weight-bold text-dark">📣 Exciting News: Notebook Feature Launching This Week!
+                        </h4>
+                        <p>We are delighted to announce that our highly anticipated Bible Reading Journal Notebook
+                            feature
+                            will be available this week! Enhance your spiritual journey and deepen your understanding of
+                            the
+                            scriptures with this powerful new addition.</p>
+                        <p>Stay tuned for more updates as we roll out this exciting new feature. We can't wait for you
+                            to
+                            experience the enhanced functionality and spiritual growth that the Bible Reading Journal
+                            Notebook feature brings.</p>
+                        <p>Thank you for your continued support!</p>
+                    </div>
+                </div>
+            @endif
         </div>
         <section class="sidebar-section" style="display: none">
             <div class="sidebar-wrapper">
@@ -127,7 +148,7 @@
                 @endforeach
             </div>
         </section>
-        @include('includes.footer')
+        {{-- @include('includes.footer') --}}
     </div>
 
     <script>

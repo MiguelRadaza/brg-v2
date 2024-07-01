@@ -20,7 +20,7 @@
     <div class="main-wrapper">
         <section class="navbar-header">
             <h1><strong>Bible Reading Guide </strong><small>2.0</small></h1>
-            <button type="button" href="{{ route('login') }}" class="btn btn-default">Sign In</button>
+            <a class="btn btn-default text-center" href="{{ route('login') }}">Sign In</a>
         </section>
 
         <div class="row nav-controls">
@@ -54,7 +54,31 @@
                 </div>
                 </p>
             </div>
+
+            @if (Session::has('coming-soon'))
+                <div class="col-12 mt-5">
+                    <div class="alert alert-info nomargin alert-dismissible fade show" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true"
+                            aria-label="Close"></button>
+                        <h4 class="font-weight-bold text-dark">📣 Exciting News: Notebook Feature Launching This Week!
+                        </h4>
+                        <p>We are delighted to announce that our highly anticipated Bible Reading Journal Notebook
+                            feature
+                            will be available this week! Enhance your spiritual journey and deepen your understanding of
+                            the
+                            scriptures with this powerful new addition.</p>
+                        <p>Stay tuned for more updates as we roll out this exciting new feature. We can't wait for you
+                            to
+                            experience the enhanced functionality and spiritual growth that the Bible Reading Journal
+                            Notebook feature brings.</p>
+                        <p>Thank you for your continued support!</p>
+                    </div>
+                </div>
+            @endif
         </div>
+
+
+
         <section class="sidebar-section" style="display: none">
             <div class="sidebar-wrapper">
                 <h2><strong>Months</strong></h2>
@@ -123,9 +147,9 @@
             </div>
         </section>
 
-        <section class="footer text-center p-10">
+        {{-- <section class="footer text-center p-10">
             <a href="#">Kingstech </a>&copy; 2024 Allrights Reserved
-        </section>
+        </section> --}}
     </div>
 
     <!-- Vendor -->
