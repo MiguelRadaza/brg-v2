@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/grid');
 });
 
 
@@ -44,3 +44,7 @@ Route::post("logout", function (Request $request) {
 })->name('logout');
 
 Route::get('{pageType}/{month?}', [VerseController::class, 'versePage'])->name('home');
+
+Route::get('/offline', function () {
+    return view('modules/laravelpwa/offline');
+});
