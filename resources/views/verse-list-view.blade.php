@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @laravelPWA
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Bible Reading Guide</title>
 
@@ -29,7 +27,8 @@
                     </button>
                     <div class="dropdown-menu" role="menu">
                         @foreach ($availableMonths as $availableMonth)
-                            <a class="dropdown-item text-1" href="{{ url('list', strtolower($availableMonth)) }}">
+                            <a class="dropdown-item text-1"
+                                href="{{ url('verses/list', strtolower($availableMonth)) }}">
                                 {{ ucfirst($availableMonth) }}
                             </a>
                         @endforeach
@@ -39,13 +38,13 @@
             <div class="col-6">
                 <p>
                 <div class="btn-group flex-wrap float-end">
-                    <a href="/list" type="button"
+                    <a href="/verses/list" type="button"
                         class="btn
-                    @if (Request::is('verse/list-view*')) btn-primary @else btn-default @endif">
+                    @if (Request::is('verses/list*')) btn-primary @else btn-default @endif">
                         <i class="fas fa-bars"></i>
                     </a>
-                    <a href="/grid" type="button"
-                        class="btn @if (!Request::is('list-view') && (Request::is($month) || Request::is('/'))) btn-primary @else btn-default @endif">
+                    <a href="/verses/grid" type="button"
+                        class="btn @if (!Request::is('verses/grid*') && (Request::is($month) || Request::is('/'))) btn-primary @else btn-default @endif">
                         <i class="fas fa-table-cells-large"></i>
                     </a>
                 </div>

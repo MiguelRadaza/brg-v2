@@ -9,6 +9,7 @@
         "laravel/framework": "^11.9",
         "laravel/socialite": "^5.15",
         "laravel/tinker": "^2.9",
+        "martinbean/socialite-discord-provider": "1.2",
         "silviolleite/laravelpwa": "^2.0",
         "socialiteproviders/discord": "^4.2"
     },

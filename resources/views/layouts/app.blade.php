@@ -21,7 +21,7 @@
 <body class="font-sans antialiased">
     <div class="main-wrapper">
         @include('includes.navbar')
-        {{ $slot }}
+        @yield('content')
         @include('includes.footer')
     </div>
     </script>

@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @laravelPWA
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Bible Reading Guide</title>
 
@@ -20,7 +18,7 @@
     <div class="main-wrapper">
         <section class="navbar-header">
             <h1><strong>Bible Reading Guide </strong><small>2.0</small></h1>
-            <a class="btn btn-default text-center" href="{{ route('login') }}">Sign In</a>
+            <a class="btn btn-default text-center" href="{{ route('auth-redirect') }}">Sign In</a>
         </section>
 
         <div class="row nav-controls">
@@ -32,7 +30,8 @@
                     </button>
                     <div class="dropdown-menu" role="menu">
                         @foreach ($availableMonths as $availableMonth)
-                            <a class="dropdown-item text-1" href="{{ url('grid', strtolower($availableMonth)) }}">
+                            <a class="dropdown-item text-1"
+                                href="{{ url('verses/grid', strtolower($availableMonth)) }}">
                                 {{ ucfirst($availableMonth) }}
                             </a>
                         @endforeach
@@ -42,13 +41,13 @@
             <div class="col-6">
                 <p>
                 <div class="btn-group flex-wrap float-end">
-                    <a href="/list" type="button"
+                    <a href="/verses/list" type="button"
                         class="btn
-                    @if (Request::is('list-view*')) btn-primary @else btn-default @endif">
+                    @if (Request::is('verses/list*')) btn-primary @else btn-default @endif">
                         <i class="fas fa-bars"></i>
                     </a>
-                    <a href="/grid" type="button"
-                        class="btn @if (!Request::is('list-view') && (Request::is($month) || Request::is('/'))) btn-primary @else btn-default @endif">
+                    <a href="/verses/grid" type="button"
+                        class="btn @if (!Request::is('verses/grid*') && (Request::is($month) || Request::is('/'))) btn-primary @else btn-default @endif">
                         <i class="fas fa-table-cells-large"></i>
                     </a>
                 </div>
@@ -124,7 +123,7 @@
                                 <div class="verse-day-text lead">
                                     Morning
                                 </div>
-                                <p class="alternative-font">{{ $verse->morning }}</p>
+                                <p class="text-primary">{{ $verse->morning }}</p>
                             </div>
                             <div class="verse-journal-wrapper">
                                 <i class="fas fa-clipboard-check mr-2 text-success"></i>
@@ -135,7 +134,7 @@
                                 <div class="verse-day-text lead">
                                     Evening
                                 </div>
-                                <p class="alternative-font">{{ $verse->evening }}</p>
+                                <p class="text-primary">{{ $verse->evening }}</p>
                             </div>
                             <div class="verse-journal-wrapper">
                                 <i class="fas fa-notdef mr-2 text-danger"></i>

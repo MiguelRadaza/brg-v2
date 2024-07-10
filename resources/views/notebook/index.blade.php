@@ -1,4 +1,6 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('content')
     <div class="container pt-4 pb-5 " style="display: flex; flex-direction:column;">
 
         <div class="mb-3">
@@ -55,26 +57,26 @@
             </div>
         </section>
     </div>
+@endsection
 
-    @push('script')
-        <script>
-            (function($) {
-                'use strict';
-                $('.popup-with-form').magnificPopup({
-                    type: 'inline',
-                    preloader: false,
-                    focus: '#name',
-                    callbacks: {
-                        beforeOpen: function() {
-                            if ($(window).width() < 700) {
-                                this.st.focus = false;
-                            } else {
-                                this.st.focus = '#name';
-                            }
+@push('script')
+    <script>
+        (function($) {
+            'use strict';
+            $('.popup-with-form').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                focus: '#name',
+                callbacks: {
+                    beforeOpen: function() {
+                        if ($(window).width() < 700) {
+                            this.st.focus = false;
+                        } else {
+                            this.st.focus = '#name';
                         }
                     }
-                });
+                }
             });
-        </script>
-    @endpush
-</x-app-layout>
+        });
+    </script>
+@endpush
