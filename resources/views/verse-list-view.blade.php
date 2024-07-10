@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
 
     <title>Bible Reading Guide</title>
-
+    @laravelPWA
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="{{ asset('theme/porto/vendor/modernizr/modernizr.js') }}"></script>
 </head>
