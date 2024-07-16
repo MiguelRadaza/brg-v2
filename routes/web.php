@@ -95,3 +95,12 @@ Route::middleware(['auth'])->group(function () {
     })->name('home');
     Route::resource('notebook', NotebookController::class);
 });
+
+
+Route::get('privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
+Route::get('terms-and-condition', function () {
+    return view('terms-and-condition');
+})->name('terms-and-condition');
