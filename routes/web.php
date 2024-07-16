@@ -104,3 +104,13 @@ Route::get('privacy-policy', function () {
 Route::get('terms-and-condition', function () {
     return view('terms-and-condition');
 })->name('terms-and-condition');
+
+
+Route::get('auth/google/', function () {
+    return Socialite::driver('gmail')->redirect();
+});
+
+Route::get('auth/google/callback', function () {
+    $user = Socialite::driver('gmail')->user();
+    dd($user);
+});
