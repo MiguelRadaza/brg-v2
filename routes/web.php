@@ -93,7 +93,8 @@ Route::middleware(['auth'])->group(function () {
         Log::info('Redirecting to notebook.index from home');
         return redirect()->route('notebook.index');
     })->name('home');
-    Route::resource('notebook', NotebookController::class);
+    Route::get('notebook/create/{verse}', [NotebookController::class, 'create'])->name('notebook.create');
+    Route::resource('notebook', NotebookController::class)->except('create');
 });
 
 
