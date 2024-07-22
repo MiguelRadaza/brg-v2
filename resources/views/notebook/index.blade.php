@@ -14,46 +14,27 @@
                 <table class="table table-responsive-md mb-0">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>Date Created</th>
+                            <th>Verse</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td class="actions">
-                                <a href=""><i class="fas fa-pencil-alt"></i></a>
-                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td class="actions">
-                                <a href=""><i class="fas fa-pencil-alt"></i></a>
-                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td class="actions">
-                                <a href=""><i class="fas fa-pencil-alt"></i></a>
-                                <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
+                        @foreach ($notebook as $notes)
+                            <tr>
+                                <td>{{ $notes->created_at->toFormattedDateString() }}</td>
+                                <td class="actions">
+                                    <a href=""><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
+
+
                 </table>
+                {{ $notes->links() }}
             </div>
         </section>
     </div>

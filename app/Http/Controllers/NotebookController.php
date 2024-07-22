@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Notebook;
 
 class NotebookController extends Controller
 {
@@ -11,7 +12,8 @@ class NotebookController extends Controller
      */
     public function index()
     {
-        return view('notebook.index');
+        $notebook = Notebook::paginate(20);
+        return view('notebook.index', compact('notebook'));
     }
 
     /**
