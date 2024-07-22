@@ -34,7 +34,7 @@
 
 
                 </table>
-                {{ $notes->links() }}
+                {{ $notebook->links() }}
             </div>
         </section>
     </div>
