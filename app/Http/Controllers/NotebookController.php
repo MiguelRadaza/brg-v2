@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Notebook;
+use App\Models\Verse;
 
 class NotebookController extends Controller
 {
@@ -19,9 +20,13 @@ class NotebookController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($verse)
+    public function create()
     {
-        return view('notebook.create', compact('verse'));
+        $month = strtolower(date('F'));
+        $currentDay = date('j');
+        $verses = Verse::where('month', strtolower($month))->where('day', $currentDay)->orderBy('day')->get()->groupBy('day');
+
+        return view('notebook.create', compact('verse', 'currentDay', 'verses', 'month'));
     }
 
     /**
