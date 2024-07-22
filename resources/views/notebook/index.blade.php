@@ -4,7 +4,7 @@
     <div class="container pt-4 pb-5 " style="display: flex; flex-direction:column;">
 
         <div class="mb-3">
-            <a class="popup-with-form btn btn-success float-end" href="#demo-form">
+            <a href="{{ route('notebook.create') }}" class="popup-with-form btn btn-success float-end" href="#demo-form">
                 <i class="fas fa-plus mr-2"></i>
                 Create Note
             </a>
