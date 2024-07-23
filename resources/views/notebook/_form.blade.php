@@ -11,6 +11,18 @@
                 </div>
 
                 <div class="form-group row pb-4">
+                    <select data-plugin-selectTwo class="form-control populate">
+                        @foreach ($verses as $month => $verses)
+                            <optgroup label="{{ $month }}">
+                                @foreach ($verses as $verse)
+                                    <option value="{{ $verse->id }}">{{ }}</option>
+                                @endforeach
+                            </optgroup>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group row pb-4">
                     <label class="col-lg-3 control-label text-lg-end pt-2" for="textareaAutosize">Textarea
                         Rhema</label>
                     <div class="col-lg-6">

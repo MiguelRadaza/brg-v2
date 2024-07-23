@@ -37,6 +37,22 @@
     <script src="{{ asset('theme/porto/vendor/jquery-placeholder/jquery.placeholder.js') }}"></script>
 
     <!-- Specific Page Vendor -->
+    <script src="{{ asset('theme/porto/vendor/jquery-ui/jquery-ui.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/select2/js/select2.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-multiselect/js/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/jquery-maskedinput/jquery.maskedinput.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/fuelux/js/spinner.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/dropzone/dropzone.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-markdown/js/markdown.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-markdown/js/to-markdown.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-markdown/js/bootstrap-markdown.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/summernote/summernote-bs4.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/bootstrap-maxlength/bootstrap-maxlength.js') }}"></script>
+    <script src="{{ asset('theme/porto/vendor/ios7-switch/ios7-switch.js') }}"></script>
+
 
     <!-- Theme Base, Components and Settings -->
     <script src="{{ asset('theme/porto/js/theme.js') }}"></script>
