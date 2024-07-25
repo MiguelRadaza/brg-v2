@@ -27,6 +27,8 @@ class NotebookController extends Controller
         $currentVerseDay = Verse::where('month', strtolower($month))->where('day', $currentDay)->orderBy('day')->first();
         $verses = Verse::all();
 
+   
+    
         $data = [];
         foreach($verses as $verse) {
             $data[$verse->month][] = $verse;
@@ -35,6 +37,7 @@ class NotebookController extends Controller
         $verses = $data;
 
         return view('notebook.create', compact('currentDay', 'currentVerseDay', 'month', 'verses'));
+
     }
 
     /**

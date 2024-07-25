@@ -84,7 +84,7 @@ Route::post('logout', function (Request $request) {
 
 // Offline route
 Route::get('/offline', function () {
-    return view('modules/laravelpwa/offline');
+        return view('vendor.laravelpwa.offline');
 });
 
 // Authenticated routes
