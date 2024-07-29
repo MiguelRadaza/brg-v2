@@ -33,7 +33,7 @@ class VerseController extends Controller
         }
 
         // Fetch the verses for the specified or current month
-        $verses = Verse::where('month', strtolower($month))->orderBy('day')->get()->groupBy('day');
+        $verses = Verse::where('month', ucfirst($month))->orderBy('day')->get()->groupBy('day');
 
         $currentDay = date('j');
 

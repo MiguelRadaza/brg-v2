@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('notebooks', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longText('description');
+            $table->unsignedBigInteger('verse_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('day');
+            $table->integer('month');
+            $table->string('journal_type');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('verse_id')->references('id')->on('verses')->onDelete('cascade');
+            $table->index('title');
+            $table->index('day');
+            $table->index('month');
+            $table->index('journal_type');
         });
     }
 

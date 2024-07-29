@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repository\VerseRepository;
+use App\Http\Service\NotebookService;
 use Illuminate\Http\Request;
 use App\Models\Notebook;
 use App\Models\Verse;
 
 class NotebookController extends Controller
 {
+
+
+    public function __construct(protected $verseRepository = new VerseRepository(), protected $notebookService = new NotebookService()) {}
     /**
      * Display a listing of the resource.
      */
@@ -17,27 +22,32 @@ class NotebookController extends Controller
         return view('notebook.index', compact('notebook'));
     }
 
+    public function getVerseByDayAndMonth(Request $request)
+    {
+        $verses = $this->verseRepository->getVerseByMonthAndDay($request->month,  $request->day);
+        $currentVerse = $request->journalType == "morning"? $verses->morning: $verses->evening;
+        $validateJournal = $this->notebookService->validateJournal($request->year, $request->month, $request->day, $currentVerse, $request->journalType);
+
+        return response()->json([
+            'success' => true,
+            'validate' => !$validateJournal? false : true,
+            'validate_data' => !$validateJournal? [] : $validateJournal['data'],
+            'verse' => $currentVerse
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $month = strtolower(date('F'));
-        $currentDay = date('j');
-        $currentVerseDay = Verse::where('month', strtolower($month))->where('day', $currentDay)->orderBy('day')->first();
-        $verses = Verse::all();
+        $currentVerseDay = $this->verseRepository->getCurrentDayVerses();
+        $verses = $this->verseRepository->getFormattedVerses();
 
-   
-    
-        $data = [];
-        foreach($verses as $verse) {
-            $data[$verse->month][] = $verse;
-        }
-
-        $verses = $data;
-
-        return view('notebook.create', compact('currentDay', 'currentVerseDay', 'month', 'verses'));
-
+        return view('notebook.create', compact(
+            'currentVerseDay',
+            'verses'
+        ));
     }
 
     /**
@@ -45,7 +55,19 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'currentVerseInput' => 'required',
+            'journalDateInput' => 'required',
+            'journalTypeInput' => 'required',
+            'inputRhema' => 'required'
+        ]);
+
+        $createNote = $this->notebookService->createNote($validated);
+        if (!$createNote) {
+            return redirect()->back()->with('message', "An error occurred, we already notified the developer, Please try again..");
+        }
+
+        return redirect()->back()->with('success', "✅ Note Created Successfully!");
     }
 
     /**
@@ -79,4 +101,28 @@ class NotebookController extends Controller
     {
         //
     }
+
+    // public function validateNotebook(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'year' => 'required',
+    //         'month' => 'required',
+    //         'day' => 'required',
+    //         'journalType' => 'required',
+    //         'title' => 'required',
+    //     ]);
+
+    //     $validate = $this->notebookService->validateJournal($request->year, $request->month, $request->day, $request->title);
+    //     if (!$validate) {
+    //         return response()->json([
+    //             'success' => true,
+    //             'message' => "You don't have journal yet on this day",
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => "You already have a journal on " . $request->month . "/" . $request->day . "/" . $request->year,
+    //         ]);
+    //     }
+    // }
 }

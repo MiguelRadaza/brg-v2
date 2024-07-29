@@ -11,6 +11,8 @@ import "../theme/porto/vendor/jquery-ui/jquery-ui.css";
 import "../theme/porto/vendor/jquery-ui/jquery-ui.theme.css";
 import "../theme/porto/vendor/select2/css/select2.css";
 import "../theme/porto/vendor/select2-bootstrap-theme/select2-bootstrap.min.css";
+import "../theme/porto/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css";
+import "../theme/porto/vendor/summernote/summernote-bs4.css";
 
 import "../theme/porto/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css";
 import "../theme/porto/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css";

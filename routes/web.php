@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\NotebookController;
 use App\Http\Controllers\VerseController;
 use App\Models\User;
@@ -29,62 +30,16 @@ Route::get('/verses', function () {
 // Verse route
 Route::get('verses/{pageType}/{month?}', [VerseController::class, 'versePage']);
 
-// Discord authentication redirect
-Route::get('/auth/redirect', function () {
-    Log::info('Redirecting to Discord for authentication');
-    return Socialite::driver('discord')->redirect();
-})->name('auth-redirect');
-
-// Discord authentication callback
-Route::get('/auth/callback', function () {
-    Log::info('Discord authentication callback');
-    $discordUser = Socialite::driver('discord')->stateless()->user();
-
-    Log::info('Discord user retrieved: ' . $discordUser->email);
-
-    $password = Hash::make($discordUser->email . 'MjRhYjFkODQ5NjIyN2QwMmZkM2M3YTU3ZDYyMmUwMzUyNGFiMWQ4NDk2MjI3ZDAyZmQzYzdhNTdkNjIyZTAzNQ==');
-    $user = User::updateOrCreate([
-        'email' => $discordUser->email,
-        'discord_id' => $discordUser->id,
-    ], [
-        'name' => $discordUser->name,
-        'avatar' => $discordUser->avatar,
-        'email' => $discordUser->email,
-        'password' => $password,
-        'discord_token' => $discordUser->token,
-        'discord_refresh_token' => $discordUser->refreshToken,
-    ]);
-
-    if ($user) {
-        Log::info('User created/updated: ' . $user->email);
-    } else {
-        Log::error('Failed to create/update user.');
-    }
-
-    Auth::login($user);
-
-    if (Auth::check()) {
-        Log::info('User logged in: ' . auth()->user()->name);
-        Log::info('Redirecting to notebook.index');
-        return redirect()->route('notebook.index');
-    } else {
-        Log::error('Authentication failed.');
-        return redirect()->route('login');
-    }
-});
+// Discord authentication
+Route::get('/auth/redirect', [AuthenticationController::class, 'discordRedirect'])->name('auth-redirect');
+Route::get('/auth/callback', [AuthenticationController::class, 'discordCallback']);
 
 // Logout route
-Route::post('logout', function (Request $request) {
-    Log::info('User logging out');
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/');
-})->name('logout');
+Route::post('logout',  [AuthenticationController::class, 'logout'])->name('logout');
 
 // Offline route
 Route::get('/offline', function () {
-        return view('vendor.laravelpwa.offline');
+    return view('vendor.laravelpwa.offline');
 });
 
 // Authenticated routes
@@ -94,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
         return redirect()->route('notebook.index');
     })->name('home');
     Route::resource('notebook', NotebookController::class);
+    Route::post('/get-verse-by-day-and-month/{month?}/{day?}', [NotebookController::class, 'getVerseByDayAndMonth'])->name('get-verse-by-day-and-month');
 });
 
 
@@ -104,13 +60,3 @@ Route::get('privacy-policy', function () {
 Route::get('terms-and-condition', function () {
     return view('terms-and-condition');
 })->name('terms-and-condition');
-
-
-Route::get('auth/google/', function () {
-    return Socialite::driver('gmail')->redirect();
-});
-
-Route::get('auth/google/callback', function () {
-    $user = Socialite::driver('gmail')->user();
-    dd($user);
-});

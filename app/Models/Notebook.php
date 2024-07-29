@@ -12,8 +12,11 @@ class Notebook extends Model
     public $fillable = [
         'title',
         'description',
-        'prayer',
         'verse_id',
-        'user_id'
+        'user_id',
+        'day',
+        'month',
+        'year',
+        'journal_type',
     ];
 }
