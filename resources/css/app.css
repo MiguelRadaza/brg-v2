@@ -1,3 +1,10 @@
+.content-body {
+    .profile {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+}
+
 .nav-wrapper {
     display: flex;
     flex-direction: row;
@@ -6,15 +13,21 @@
 }
 
 @media (max-width: 425px) {
-   .nav-wrapper {
-    flex-direction: column;
-   }
+    .nav-wrapper {
+        flex-direction: column;
+    }
+
+    .content-body {
+        .profile {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+    }
 }
 
 .success {
     color: green; /* Set the text color to green for success */
 }
-
 
 .sidebar-section {
     display: flex;
@@ -71,7 +84,7 @@
             font-size: 20px;
         }
 
-        a {
+        .sign-in-button {
             width: 100px;
             border-radius: 15px;
             background-color: teal;
@@ -218,6 +231,10 @@
 
 .sidebar-icon {
     display: none;
+}
+
+.profile-button {
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

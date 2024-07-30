@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\NotebookController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerseController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -50,8 +51,11 @@ Route::middleware(['auth'])->group(function () {
     })->name('home');
     Route::resource('notebook', NotebookController::class);
     Route::post('/get-verse-by-day-and-month/{month?}/{day?}', [NotebookController::class, 'getVerseByDayAndMonth'])->name('get-verse-by-day-and-month');
-});
 
+    // Profile
+    Route::get('/profile', [UserController::class, 'userProfile'])->name('profile');
+    Route::post('/verify-email-account', [UserController::class, 'verifyEmailAccount'])->name('profile.verify-email');
+});
 
 Route::get('privacy-policy', function () {
     return view('privacy-policy');

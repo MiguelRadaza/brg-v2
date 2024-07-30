@@ -3,40 +3,37 @@
 @section('content')
     <div class="container pt-4 pb-5 " style="display: flex; flex-direction:column;">
 
-        <div class="mb-3">
-            <a href="{{ route('notebook.create') }}" class="popup-with-form btn btn-success float-end" href="#demo-form">
-                <i class="fas fa-plus mr-2"></i>
-                Create Note
-            </a>
-        </div>
-        <section class="card">
-            <div class="card-body">
-                <table class="table table-responsive-md mb-0">
-                    <thead>
-                        <tr>
-                            <th>Date Created</th>
-                            <th>Verse</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($notebook as $notes)
-                            <tr>
-                                <td>{{ $notes->created_at->toFormattedDateString() }}</td>
-                                <td class="actions">
-                                    <a href=""><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        @endforeach
-
-                    </tbody>
-
-
-                </table>
-                {{ $notebook->links() }}
+        <div class="mb-3 row">
+            <div class="col-4">
+                <input type="text" class="form-control" placeholder="Search Verse Title.." />
+                <input type="text" class="form-control" placeholder="Search Verse Title.." />
             </div>
-        </section>
+            <div class="col-8">
+                <a href="{{ route('notebook.create') }}" class="popup-with-form btn btn-success float-end"
+                    href="#demo-form">
+                    <i class="fas fa-plus mr-2"></i>
+                    Create Note
+                </a>
+            </div>
+        </div>
+
+        @foreach ($notebook as $notes)
+            <section class="card">
+                <div class="card-body">
+
+                </div>
+            </section>
+            <tr>
+                <td>{{ $notes->created_at->toFormattedDateString() }}</td>
+                <td class="actions">
+                    <a href=""><i class="fas fa-pencil-alt"></i></a>
+                    <a href="" class="delete-row"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        @endforeach
+        {{ $notebook->links() }}
+
+
     </div>
 @endsection
 

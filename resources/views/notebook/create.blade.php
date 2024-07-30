@@ -41,12 +41,20 @@
                         document.getElementById("currentVerseInput").removeAttribute("disabled");
                         document.getElementById("currentVerseInput").value = response
                             .verse; // Access the 'verse' field
-                        console.log("Verse:", response.verse); // Log the verse
 
-                        // Update label for success
-                        validateStatusLabel.text("✅ You don't have journal yet on this date.");
-                        validateStatusLabel.removeClass("error");
-                        validateStatusLabel.addClass("success");
+                        document.getElementById("verse_id").value = response.verse_id;
+                        console.log("Verse:", response.verse); // Log the verse
+                        if (response.validate) {
+                            validateStatusLabel.text('You already have a journal on this date.');
+                            validateStatusLabel.removeClass("success");
+                            validateStatusLabel.addClass("error");
+                            $('#inputRhema').prop('disabled', true);
+                        } else {
+                            validateStatusLabel.text("✅ You don't have journal yet on this date.");
+                            validateStatusLabel.removeClass("error");
+                            validateStatusLabel.addClass("success");
+                            $('#inputRhema').prop('disabled', false);
+                        }
                     } else {
                         console.error("Response error:", response);
 

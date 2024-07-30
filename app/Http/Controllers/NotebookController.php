@@ -12,7 +12,9 @@ class NotebookController extends Controller
 {
 
 
-    public function __construct(protected $verseRepository = new VerseRepository(), protected $notebookService = new NotebookService()) {}
+    public function __construct(protected $verseRepository = new VerseRepository(), protected $notebookService = new NotebookService())
+    {
+    }
     /**
      * Display a listing of the resource.
      */
@@ -25,13 +27,14 @@ class NotebookController extends Controller
     public function getVerseByDayAndMonth(Request $request)
     {
         $verses = $this->verseRepository->getVerseByMonthAndDay($request->month,  $request->day);
-        $currentVerse = $request->journalType == "morning"? $verses->morning: $verses->evening;
-        $validateJournal = $this->notebookService->validateJournal($request->year, $request->month, $request->day, $currentVerse, $request->journalType);
+        $currentVerse = $request->journalType == "morning" ? $verses->morning : $verses->evening;
+        $validateJournal = $this->notebookService->validateJournal($verses->id, $request->journalType);
 
         return response()->json([
             'success' => true,
-            'validate' => !$validateJournal? false : true,
-            'validate_data' => !$validateJournal? [] : $validateJournal['data'],
+            'verse_id' => $verses->id,
+            'validate' => !$validateJournal ? false : true,
+            'validate_data' => !$validateJournal ? [] : $validateJournal['data'],
             'verse' => $currentVerse
         ]);
     }
@@ -59,10 +62,25 @@ class NotebookController extends Controller
             'currentVerseInput' => 'required',
             'journalDateInput' => 'required',
             'journalTypeInput' => 'required',
+            'verse_id' => 'required',
             'inputRhema' => 'required'
         ]);
+        $validateJournal = $this->notebookService->validateJournal($validated['verse_id'], $request->journalType);
+        if ($validateJournal) {
+            return redirect()->back()->with('message', "Can't have two journal at the same time, Please try again..");
+        }
 
-        $createNote = $this->notebookService->createNote($validated);
+        $date = explode("/", $validated['journalDateInput']);
+        $createNote = $this->notebookService->createNote([
+            'title' => $validated['currentVerseInput'],
+            'description' => $validated['inputRhema'],
+            'verse_id' => $validated['verse_id'],
+            'day' => $date[1],
+            'month' => $date[0],
+            'year' => $date[2],
+            'user_id' => auth()->user()->id,
+            'journal_type' => $validated['journalTypeInput'],
+        ]);
         if (!$createNote) {
             return redirect()->back()->with('message', "An error occurred, we already notified the developer, Please try again..");
         }

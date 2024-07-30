@@ -3,6 +3,7 @@
         <div class="card-body">
             <form class="form-horizontal form-bordered" method="post" action="{{ $form_url }}">
                 @csrf
+                <input type="hidden" name="verse_id" id="verse_id" />
                 <div class="form-group row pb-4 align-items-center">
                     <label class="col-lg-5 col-xl-3 control-label text-lg-end mb-0">Current Verse</label>
                     <div class="col-lg-7 col-xl-6">
@@ -46,7 +47,8 @@
                     <label class="col-lg-3 control-label text-lg-end pt-2" for="inputRhema">
                         Rhema</label>
                     <div class="col-lg-6">
-                        <textarea required data-plugin-summernote data-plugin-options='{ "height": 400 }' class="summernote" name="inputRhema">Start typing...</textarea>
+                        <textarea name="inputRhema" disabled required data-plugin-summernote data-plugin-options='{ "height": 400 }'
+                            class="summernote" id="inputRhema">Start typing...</textarea>
                     </div>
                 </div>
 
