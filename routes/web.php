@@ -64,3 +64,7 @@ Route::get('privacy-policy', function () {
 Route::get('terms-and-condition', function () {
     return view('terms-and-condition');
 })->name('terms-and-condition');
+
+Route::post('/email/verification-notification', [UserController::class, 'sendEmailVerification'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/email/verify/{id}/{hash}', [UserController::class, 'fulfillEmailVerification'])->middleware(['auth', 'signed'])->name('verification.verify');

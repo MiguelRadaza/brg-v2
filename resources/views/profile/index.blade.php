@@ -67,18 +67,22 @@
                                 <label for="webhook">Webhook Link</label>
                                 <input type="password" class="form-control" id="webhook" placeholder="Discord Webhook">
                             </div>
-                            <form action="{{ route('profile.verify-email') }}" method="post">
-                                @csrf
-                                <input type="hidden" value="0" name="isCovenantPerson" id="isCovenantPerson" />
-                                <div class="form-group verify-email-wrapper" style="display: none;">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="email" value="{{ $user->email }}"
-                                            class="form-control">
-                                        <button type="submit" class="btn btn-success" type="button">Verify Email
-                                            Account</button>
+                            @if (empty($user->email_verified_at))
+                                <form action="{{ route('verification.send') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" value="0" name="isCovenantPerson" id="isCovenantPerson" />
+                                    <div class="form-group verify-email-wrapper" style="display: none;">
+                                        <div class="input-group mb-3">
+                                            <input type="text" name="email" value="{{ $user->email }}"
+                                                class="form-control" disabled>
+                                            <button type="submit" class="btn btn-success" type="button">Verify Email
+                                                Account</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            @else
+                            @endif
+
 
                             <div class="row" style="display: none;">
                                 <div class="col-md-12 text-end mt-3">

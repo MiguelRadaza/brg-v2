@@ -24,7 +24,7 @@ class NotebookService extends BaseService
             $currentVerse = $data['journal_type'] == "morning" ? $verse->morning : $verse->evening;
 
             event(new JournalCreateEvent([
-                'message' => 'awdawdawdawd',
+                'message' => 'Sample Message',
                 'name' => auth()->user()->name,
                 'verse' => $currentVerse,
                 'user_id' => auth()->user()->id,

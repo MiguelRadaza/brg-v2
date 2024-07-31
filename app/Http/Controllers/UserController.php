@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,8 +13,20 @@ class UserController extends Controller
         return view('profile.index', compact('user'));
     }
 
-    public function verifyEmailAccount(Request $request)
+    public function sendEmailVerification(Request $request)
     {
-        dd($request->all());
+        $request->user()->sendEmailVerificationNotification();
+
+        return back()->with('message', 'Verification link sent!');
+    }
+
+    public function fulfillEmailVerification(EmailVerificationRequest $request)
+    {
+        $request->fulfill();
+        if (auth()->user()->hasRole('COVENANT CEO')) {
+            auth()->user()->assignRole('COVENANT CEO');
+        }
+
+        return redirect('/profile');
     }
 }
