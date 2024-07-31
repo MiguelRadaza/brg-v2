@@ -36,7 +36,7 @@ Route::get('/auth/redirect', [AuthenticationController::class, 'discordRedirect'
 Route::get('/auth/callback', [AuthenticationController::class, 'discordCallback']);
 
 // Logout route
-Route::post('logout',  [AuthenticationController::class, 'logout'])->name('logout');
+Route::post('logout', [AuthenticationController::class, 'logout'])->name('logout');
 
 // Offline route
 Route::get('/offline', function () {
@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
     // Profile
     Route::get('/profile', [UserController::class, 'userProfile'])->name('profile');
     Route::post('/verify-email-account', [UserController::class, 'verifyEmailAccount'])->name('profile.verify-email');
+    Route::post('profile-update', [UserController::class, 'profileUpdate'])->name('profile-update');
 });
 
 Route::get('privacy-policy', function () {

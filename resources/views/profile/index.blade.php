@@ -59,14 +59,12 @@
                             <div class="form-group">
                                 <label class="col-lg-5 control-label "><strong>I'm a Covenant Person</strong></label>
                                 <div class="switch switch-sm switch-info">
-                                    <input type="checkbox" name="covenant-person-switch" id="covenant-person-switch"
+                                    <input type="checkbox" name="covenant-person-switch"
+                                        @if (auth()->user()->is_covenant_person) checked @endif id="covenant-person-switch"
                                         data-plugin-ios-switch />
                                 </div>
                             </div>
-                            <div class="form-group" style="display: none;">
-                                <label for="webhook">Webhook Link</label>
-                                <input type="password" class="form-control" id="webhook" placeholder="Discord Webhook">
-                            </div>
+
                             @if (empty($user->email_verified_at))
                                 <form action="{{ route('verification.send') }}" method="post">
                                     @csrf
@@ -80,15 +78,41 @@
                                         </div>
                                     </div>
                                 </form>
-                            @else
+                            @elseif (!empty(auth()->user()->email_verified_at) && auth()->user()->is_covenant_person)
+                                <form action="{{ route('profile-update') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <select data-plugin-selectTwo name="church_id" required
+                                                @if (!empty(auth()->user()->covenantCompany)) disabled @endif
+                                                class="form-control populate" id="church_id">
+                                                <option value="">Select Church</option>
+                                                @foreach ($churches as $church)
+                                                    <option
+                                                        @if (!empty(auth()->user()->covenantCompany)) @if (auth()->user()->covenantCompany->church_id == $church->id) selected @endif
+                                                        @endif
+                                                        value="{{ $church->id }}">{{ $church->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="webhook">Webhook Link</label>
+                                        <input type="text" name="webhook" class="form-control" id="webhook"
+                                            placeholder="Discord Webhook">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12 text-end mt-3">
+                                            <button class="btn btn-primary modal-confirm">Save</button>
+                                        </div>
+                                    </div>
+                                </form>
                             @endif
 
 
-                            <div class="row" style="display: none;">
-                                <div class="col-md-12 text-end mt-3">
-                                    <button class="btn btn-primary modal-confirm">Save</button>
-                                </div>
-                            </div>
+
 
 
                         </div>
