@@ -1314,382 +1314,376 @@ class VersesTableSeeder extends Seeder
                 ]
             ],
             'august' =>  [
-                [
-                    "day" => 1,
-                    "morning" => "Acts 10:24 - 48",
-                    "evening" => "Job 20, 21",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 2,
-                    "morning" => "Acts 11",
-                    "evening" => "Job 22, 23, 24",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 3,
-                    "morning" => "Acts 12",
-                    "evening" => "Job 25, 26, 27",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 4,
-                    "morning" => "Acts 13:1 - 25",
-                    "evening" => "Job 28, 29",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 5,
-                    "morning" => "Acts 13:26 - 52",
-                    "evening" => "Job 30, 31",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 6,
-                    "morning" => "Acts 14",
-                    "evening" => "Job 32, 33",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 7,
-                    "morning" => "Acts 15:1 - 21",
-                    "evening" => "Job 34, 35",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 8,
-                    "morning" => "Acts 15:26 - 41",
-                    "evening" => "Job 36, 37",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 9,
-                    "morning" => "Acts 16:1 - 24",
-                    "evening" => "Job 38, 39, 40",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 10,
-                    "morning" => "Acts 16:25 - 40",
-                    "evening" => "Job 41, 42",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 11,
-                    "morning" => "Acts 17:1 - 16",
-                    "evening" => "Psalms 1, 2, 3",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 12,
-                    "morning" => "Acts 17:17 - 34",
-                    "evening" => "Psalms 4, 5, 6",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 13,
-                    "morning" => "Acts 18",
-                    "evening" => "Psalms 7, 8, 9",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 14,
-                    "morning" => "Acts 19:1 - 20",
-                    "evening" => "Psalms 10, 11, 12",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 15,
-                    "morning" => "Acts 19:21 - 41",
-                    "evening" => "Psalms 13, 14, 15",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 16,
-                    "morning" => "Acts 20:1 - 16",
-                    "evening" => "Psalms 16, 17",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 17,
-                    "morning" => "Acts 20:17 - 38",
-                    "evening" => "Psalms 18, 19",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 18,
-                    "morning" => "Acts 21:1 - 16",
-                    "evening" => "Psalms 20, 21, 22",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 19,
-                    "morning" => "Acts 21:17 - 40",
-                    "evening" => "Psalms 23, 24, 25",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 20,
-                    "morning" => "Acts 22",
-                    "evening" => "Psalms 26, 27, 28",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 21,
-                    "morning" => "Acts 23:1 - 22",
-                    "evening" => "Psalms 29, 30",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 22,
-                    "morning" => "Acts 24:23 - 35",
-                    "evening" => "Psalms 31, 32",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 23,
-                    "morning" => "Acts 24",
-                    "evening" => "Psalms 33, 34",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 24,
-                    "morning" => "Acts 25",
-                    "evening" => "Psalms 35, 36",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 25,
-                    "morning" => "Acts 26",
-                    "evening" => "Psalms 37, 38, 39",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 26,
-                    "morning" => "Acts 27:1 - 26",
-                    "evening" => "Psalms 40, 41, 42",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 27,
-                    "morning" => "Acts 27:27 - 44",
-                    "evening" => "Psalms 43, 44, 45",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 28,
-                    "morning" => "Acts 28",
-                    "evening" => "Psalms 46, 47, 48",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 29,
-                    "morning" => "Romans 1",
-                    "evening" => "Psalms 49, 50",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 30,
-                    "morning" => "Romans 2",
-                    "evening" => "Psalms 51, 52, 53",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 31,
-                    "morning" => "Romans 3",
-                    "evening" => "Psalms 54, 55, 56",
-                    "mos" => 7
-                ]
-            ],
+   [
+         "day" => 1, 
+         "morning" => "Romans 4", 
+         "evening" => "Psalms 57, 58, 59", 
+         "mos" => 8 
+      ], 
+   [
+            "day" => 2, 
+            "morning" => "Romans 5", 
+            "evening" => "Psalms 60, 61, 62", 
+            "mos" => 8 
+         ], 
+   [
+               "day" => 3, 
+               "morning" => "Romans 6", 
+               "evening" => "Psalms 63, 64, 65", 
+               "mos" => 8 
+            ], 
+   [
+                  "day" => 4, 
+                  "morning" => "Romans 7", 
+                  "evening" => "Psalms 66, 67", 
+                  "mos" => 8 
+               ], 
+   [
+                     "day" => 5, 
+                     "morning" => "Romans 8:1 - 17", 
+                     "evening" => "Psalms 68, 69", 
+                     "mos" => 8 
+                  ], 
+   [
+                        "day" => 6, 
+                        "morning" => "Romans 8:18 - 39", 
+                        "evening" => "Psalms 70, 71", 
+                        "mos" => 8 
+                     ], 
+   [
+                           "day" => 7, 
+                           "morning" => "Romans 9:1 - 18", 
+                           "evening" => "Psalms 72, 73", 
+                           "mos" => 8 
+                        ], 
+   [
+                              "day" => 8, 
+                              "morning" => "Romans 9:19 - 33", 
+                              "evening" => "Psalms 74, 75, 76", 
+                              "mos" => 8 
+                           ], 
+   [
+                                 "day" => 9, 
+                                 "morning" => "Romans 10", 
+                                 "evening" => "Psalms 77, 78", 
+                                 "mos" => 8 
+                              ], 
+   [
+                                    "day" => 10, 
+                                    "morning" => "Romans 11:1 - 24", 
+                                    "evening" => "Psalms 79, 80", 
+                                    "mos" => 8 
+                                 ], 
+   [
+                                       "day" => 11, 
+                                       "morning" => "Romans 11:25 - 36", 
+                                       "evening" => "Psalms 81, 82, 83", 
+                                       "mos" => 8 
+                                    ], 
+   [
+                                          "day" => 12, 
+                                          "morning" => "Romans 12", 
+                                          "evening" => "Psalms 84, 85, 86", 
+                                          "mos" => 8 
+                                       ], 
+   [
+                                             "day" => 13, 
+                                             "morning" => "Romans 13", 
+                                             "evening" => "Psalms 87, 88", 
+                                             "mos" => 8 
+                                          ], 
+   [
+                                                "day" => 14, 
+                                                "morning" => "Romans 14", 
+                                                "evening" => "Psalms 89, 90", 
+                                                "mos" => 8 
+                                             ], 
+   [
+                                                   "day" => 15, 
+                                                   "morning" => "Romans 15:1 - 13", 
+                                                   "evening" => "Psalms 91, 92, 93", 
+                                                   "mos" => 8 
+                                                ], 
+   [
+                                                      "day" => 16, 
+                                                      "morning" => "Romans 15:14 - 33", 
+                                                      "evening" => "Psalms 94, 95, 96", 
+                                                      "mos" => 8 
+                                                   ], 
+   [
+                                                         "day" => 17, 
+                                                         "morning" => "Romans 16", 
+                                                         "evening" => "Psalms 97, 98, 99", 
+                                                         "mos" => 8 
+                                                      ], 
+   [
+                                                            "day" => 18, 
+                                                            "morning" => "1 Corinthians 1", 
+                                                            "evening" => "Psalms 100, 101, 102", 
+                                                            "mos" => 8 
+                                                         ], 
+   [
+                                                               "day" => 19, 
+                                                               "morning" => "1 Corinthians 2", 
+                                                               "evening" => "Psalms 103, 104", 
+                                                               "mos" => 8 
+                                                            ], 
+   [
+                                                                  "day" => 20, 
+                                                                  "morning" => "1 Corinthians 3", 
+                                                                  "evening" => "Psalms 105, 106", 
+                                                                  "mos" => 8 
+                                                               ], 
+   [
+                                                                     "day" => 21, 
+                                                                     "morning" => "1 Corinthians 4", 
+                                                                     "evening" => "Psalms 107, 108, 109", 
+                                                                     "mos" => 8 
+                                                                  ], 
+   [
+                                                                        "day" => 22, 
+                                                                        "morning" => "1 Corinthians 5", 
+                                                                        "evening" => "Psalms 110, 111, 112", 
+                                                                        "mos" => 8 
+                                                                     ], 
+   [
+                                                                           "day" => 23, 
+                                                                           "morning" => "1 Corinthians 6", 
+                                                                           "evening" => "Psalms 113, 114, 115", 
+                                                                           "mos" => 8 
+                                                                        ], 
+   [
+                                                                              "day" => 24, 
+                                                                              "morning" => "1 Corinthians 7:1 - 24", 
+                                                                              "evening" => "Psalms 116, 117, 118", 
+                                                                              "mos" => 8 
+                                                                           ], 
+   [
+                                                                                 "day" => 25, 
+                                                                                 "morning" => "1 Corinthians 7:25 - 40", 
+                                                                                 "evening" => "Psalms 119:1 - 88", 
+                                                                                 "mos" => 8 
+                                                                              ], 
+   [
+                                                                                    "day" => 26, 
+                                                                                    "morning" => "1 Corinthians 8", 
+                                                                                    "evening" => "Psalms 119:89 - 176", 
+                                                                                    "mos" => 8 
+                                                                                 ], 
+   [
+                                                                                       "day" => 27, 
+                                                                                       "morning" => "1 Corinthians 9", 
+                                                                                       "evening" => "Psalms 120, 121, 122", 
+                                                                                       "mos" => 8 
+                                                                                    ], 
+   [
+                                                                                          "day" => 28, 
+                                                                                          "morning" => "1 Corinthians 10:1 - 17", 
+                                                                                          "evening" => "Psalms 123, 124, 125", 
+                                                                                          "mos" => 8 
+                                                                                       ], 
+   [
+                                                                                             "day" => 29, 
+                                                                                             "morning" => "1 Corinthians 10:18 - 33", 
+                                                                                             "evening" => "Psalms 126, 127, 128", 
+                                                                                             "mos" => 8 
+                                                                                          ], 
+   [
+                                                                                                "day" => 30, 
+                                                                                                "morning" => "1 Corinthians 11:1 - 16", 
+                                                                                                "evening" => "Psalms 129, 130, 131", 
+                                                                                                "mos" => 8 
+                                                                                             ], 
+   [
+                                                                                                   "day" => 31, 
+                                                                                                   "morning" => "1 Corinthians 11:17 - 34", 
+                                                                                                   "evening" => "Psalms 132, 133, 134", 
+                                                                                                   "mos" => 8 
+                                                                                                ] 
+],
 
             'september' =>  [
-                [
-                    "day" => 1,
-                    "morning" => "Acts 10:24 - 48",
-                    "evening" => "Job 20, 21",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 2,
-                    "morning" => "Acts 11",
-                    "evening" => "Job 22, 23, 24",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 3,
-                    "morning" => "Acts 12",
-                    "evening" => "Job 25, 26, 27",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 4,
-                    "morning" => "Acts 13:1 - 25",
-                    "evening" => "Job 28, 29",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 5,
-                    "morning" => "Acts 13:26 - 52",
-                    "evening" => "Job 30, 31",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 6,
-                    "morning" => "Acts 14",
-                    "evening" => "Job 32, 33",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 7,
-                    "morning" => "Acts 15:1 - 21",
-                    "evening" => "Job 34, 35",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 8,
-                    "morning" => "Acts 15:26 - 41",
-                    "evening" => "Job 36, 37",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 9,
-                    "morning" => "Acts 16:1 - 24",
-                    "evening" => "Job 38, 39, 40",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 10,
-                    "morning" => "Acts 16:25 - 40",
-                    "evening" => "Job 41, 42",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 11,
-                    "morning" => "Acts 17:1 - 16",
-                    "evening" => "Psalms 1, 2, 3",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 12,
-                    "morning" => "Acts 17:17 - 34",
-                    "evening" => "Psalms 4, 5, 6",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 13,
-                    "morning" => "Acts 18",
-                    "evening" => "Psalms 7, 8, 9",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 14,
-                    "morning" => "Acts 19:1 - 20",
-                    "evening" => "Psalms 10, 11, 12",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 15,
-                    "morning" => "Acts 19:21 - 41",
-                    "evening" => "Psalms 13, 14, 15",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 16,
-                    "morning" => "Acts 20:1 - 16",
-                    "evening" => "Psalms 16, 17",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 17,
-                    "morning" => "Acts 20:17 - 38",
-                    "evening" => "Psalms 18, 19",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 18,
-                    "morning" => "Acts 21:1 - 16",
-                    "evening" => "Psalms 20, 21, 22",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 19,
-                    "morning" => "Acts 21:17 - 40",
-                    "evening" => "Psalms 23, 24, 25",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 20,
-                    "morning" => "Acts 22",
-                    "evening" => "Psalms 26, 27, 28",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 21,
-                    "morning" => "Acts 23:1 - 22",
-                    "evening" => "Psalms 29, 30",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 22,
-                    "morning" => "Acts 24:23 - 35",
-                    "evening" => "Psalms 31, 32",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 23,
-                    "morning" => "Acts 24",
-                    "evening" => "Psalms 33, 34",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 24,
-                    "morning" => "Acts 25",
-                    "evening" => "Psalms 35, 36",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 25,
-                    "morning" => "Acts 26",
-                    "evening" => "Psalms 37, 38, 39",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 26,
-                    "morning" => "Acts 27:1 - 26",
-                    "evening" => "Psalms 40, 41, 42",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 27,
-                    "morning" => "Acts 27:27 - 44",
-                    "evening" => "Psalms 43, 44, 45",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 28,
-                    "morning" => "Acts 28",
-                    "evening" => "Psalms 46, 47, 48",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 29,
-                    "morning" => "Romans 1",
-                    "evening" => "Psalms 49, 50",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 30,
-                    "morning" => "Romans 2",
-                    "evening" => "Psalms 51, 52, 53",
-                    "mos" => 7
-                ],
-                [
-                    "day" => 31,
-                    "morning" => "Romans 3",
-                    "evening" => "Psalms 54, 55, 56",
-                    "mos" => 7
-                ]
-            ],
+   [
+         "day" => 1, 
+         "morning" => "1 Corinthians 12", 
+         "evening" => "Psalms 135, 136", 
+         "mos" => 9 
+      ], 
+   [
+            "day" => 2, 
+            "morning" => "1 Corinthians 13", 
+            "evening" => "Psalms 137, 138, 139", 
+            "mos" => 9 
+         ], 
+   [
+               "day" => 3, 
+               "morning" => "1 Corinthians 14:1 - 25", 
+               "evening" => "Psalms 140, 141, 142", 
+               "mos" => 9 
+            ], 
+   [
+                  "day" => 4, 
+                  "morning" => "1 Corinthians 14:26 - 40", 
+                  "evening" => "Psalms 143, 144, 145", 
+                  "mos" => 9 
+               ], 
+   [
+                     "day" => 5, 
+                     "morning" => "1 Corinthians 15:1 - 34", 
+                     "evening" => "Psalms 146, 147", 
+                     "mos" => 9 
+                  ], 
+   [
+                        "day" => 6, 
+                        "morning" => "1 Corinthians 15:35 - 58", 
+                        "evening" => "Psalms 148, 149, 150", 
+                        "mos" => 9 
+                     ], 
+   [
+                           "day" => 7, 
+                           "morning" => "1 Corinthians 16", 
+                           "evening" => "Proverbs 1, 2", 
+                           "mos" => 9 
+                        ], 
+   [
+                              "day" => 8, 
+                              "morning" => "2 Corinthians 1", 
+                              "evening" => "Proverbs 3, 4, 5", 
+                              "mos" => 9 
+                           ], 
+   [
+                                 "day" => 9, 
+                                 "morning" => "2 Corinthians 2", 
+                                 "evening" => "Proverbs 6, 7", 
+                                 "mos" => 9 
+                              ], 
+   [
+                                    "day" => 10, 
+                                    "morning" => "2 Corinthians 3", 
+                                    "evening" => "Proverbs 8, 9", 
+                                    "mos" => 9 
+                                 ], 
+   [
+                                       "day" => 11, 
+                                       "morning" => "2 Corinthians 4", 
+                                       "evening" => "Proverbs 10, 11, 12", 
+                                       "mos" => 9 
+                                    ], 
+   [
+                                          "day" => 12, 
+                                          "morning" => "2 Corinthians 5", 
+                                          "evening" => "Proverbs 13, 14, 15", 
+                                          "mos" => 9 
+                                       ], 
+   [
+                                             "day" => 13, 
+                                             "morning" => "2 Corinthians 6", 
+                                             "evening" => "Proverbs 16, 17, 18", 
+                                             "mos" => 9 
+                                          ], 
+   [
+                                                "day" => 14, 
+                                                "morning" => "2 Corinthians 7", 
+                                                "evening" => "Proverbs 19, 20, 21", 
+                                                "mos" => 9 
+                                             ], 
+   [
+                                                   "day" => 15, 
+                                                   "morning" => "2 Corinthians 8", 
+                                                   "evening" => "Proverbs 22, 23, 24", 
+                                                   "mos" => 9 
+                                                ], 
+   [
+                                                      "day" => 16, 
+                                                      "morning" => "2 Corinthians  9", 
+                                                      "evening" => "Proverbs 25, 26", 
+                                                      "mos" => 9 
+                                                   ], 
+   [
+                                                         "day" => 17, 
+                                                         "morning" => "2 Corinthians  10", 
+                                                         "evening" => "Proverbs 27, 28, 29", 
+                                                         "mos" => 9 
+                                                      ], 
+   [
+                                                            "day" => 18, 
+                                                            "morning" => "2 Corinthians 11:1 - 15", 
+                                                            "evening" => "Proverbs 30, 31", 
+                                                            "mos" => 9 
+                                                         ], 
+   [
+                                                               "day" => 19, 
+                                                               "morning" => "2 Corinthians 11:16 - 33", 
+                                                               "evening" => "Ecclesiastes 1, 2, 3", 
+                                                               "mos" => 9 
+                                                            ], 
+   [
+                                                                  "day" => 20, 
+                                                                  "morning" => "2 Corinthians 12", 
+                                                                  "evening" => "Ecclesiastes 4, 5, 6", 
+                                                                  "mos" => 9 
+                                                               ], 
+   [
+                                                                     "day" => 21, 
+                                                                     "morning" => "2 Corinthians 13", 
+                                                                     "evening" => "Ecclesiastes 7, 8, 9", 
+                                                                     "mos" => 9 
+                                                                  ], 
+   [
+                                                                        "day" => 22, 
+                                                                        "morning" => "Galatians 1", 
+                                                                        "evening" => "Ecclesiastes 10, 11, 12", 
+                                                                        "mos" => 9 
+                                                                     ], 
+   [
+                                                                           "day" => 23, 
+                                                                           "morning" => "Galatians 2", 
+                                                                           "evening" => "Song of Songs 1, 2, 3", 
+                                                                           "mos" => 9 
+                                                                        ], 
+   [
+                                                                              "day" => 24, 
+                                                                              "morning" => "Galatians 3", 
+                                                                              "evening" => "Song of Songs 4, 5, 6", 
+                                                                              "mos" => 9 
+                                                                           ], 
+   [
+                                                                                 "day" => 25, 
+                                                                                 "morning" => "Galatians 4", 
+                                                                                 "evening" => "Song of Songs 7, 8", 
+                                                                                 "mos" => 9 
+                                                                              ], 
+   [
+                                                                                    "day" => 26, 
+                                                                                    "morning" => "Galatians 5", 
+                                                                                    "evening" => "Isaiah 1, 2", 
+                                                                                    "mos" => 9 
+                                                                                 ], 
+   [
+                                                                                       "day" => 27, 
+                                                                                       "morning" => "Galatians 6", 
+                                                                                       "evening" => "Isaiah 3, 4", 
+                                                                                       "mos" => 9 
+                                                                                    ], 
+   [
+                                                                                          "day" => 28, 
+                                                                                          "morning" => "Ephesians 1", 
+                                                                                          "evening" => "Isaiah 5, 6", 
+                                                                                          "mos" => 9 
+                                                                                       ], 
+   [
+                                                                                             "day" => 29, 
+                                                                                             "morning" => "Ephesians 2", 
+                                                                                             "evening" => "Isaiah 7, 8", 
+                                                                                             "mos" => 9 
+                                                                                          ], 
+   [
+                                                                                                "day" => 30, 
+                                                                                                "morning" => "Ephesians 3", 
+                                                                                                "evening" => "Isaiah 9, 10", 
+                                                                                                "mos" => 9 
+                                                                                             ] 
+],
             'october' => [
                 [
                     "day" => 1,
@@ -2253,14 +2247,16 @@ class VersesTableSeeder extends Seeder
 
         // Insert data into the verses table
         foreach ($months as $month => $verses) {
-            foreach ($verses as $verse) {
-                Verse::create([
-                    'month' => ucfirst($month),
-                    'day' => $verse['day'],
-                    'morning' => $verse['morning'],
-                    'evening' => $verse['evening'],
-                ]);
-            }
+            
+                foreach ($verses as $verse) {
+                    Verse::create([
+                        'month' => ucfirst($month),
+                        'day' => $verse['day'],
+                        'morning' => $verse['morning'],
+                        'evening' => $verse['evening'],
+                    ]);
+                }
+            
         }
     }
 }
