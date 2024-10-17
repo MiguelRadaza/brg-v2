@@ -3,10 +3,24 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Verse;
+use App\Http\Controllers\Api\AuthenticationController;
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+
+Route::middleware(['auth:sanctum'])->group(function () {
+});
+Route::post('auth/register', [AuthenticationController::class, 'register']);
+
+Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+
+    return ['token' => $token->plainTextToken];
+});
+
 Route::get('verses/{token}', action: function ($token): bool|string {
     $tokenValue = "brg-app-cho:copyright@kingstech2024";
     $hashedToken = "YnJnLWFwcC1jaG86Y29weXJpZ2h0QGtpbmdzdGVjaDIwMjQ=";

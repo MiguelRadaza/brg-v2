@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
         return redirect()->route('notebook.index');
     })->name('home');
     Route::resource('notebook', NotebookController::class);
-    Route::post('/get-verse-by-day-and-month/{month?}/{day?}', [NotebookController::class, 'getVerseByDayAndMonth'])->name('get-verse-by-day-and-month');
+    // Route::post('/get-verse-by-day-and-month/{month?}/{day?}', [NotebookController::class, 'getVerseByDayAndMonth'])->name('get-verse-by-day-and-month');
 
     // Profile
     Route::get('/profile', [UserController::class, 'userProfile'])->name('profile');
