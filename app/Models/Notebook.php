@@ -10,13 +10,13 @@ class Notebook extends Model
     use HasFactory;
 
     public $fillable = [
-        'title',
+        'title', // nullable
         'description',
         'verse_id',
         'user_id',
         'day',
         'month',
         'year',
-        'journal_type',
+        'journal_type', // [morning , evening]
     ];
 }

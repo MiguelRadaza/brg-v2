@@ -11,7 +11,7 @@ class AuthenticationController extends Controller
     // Handle user registration
     public function register(Request $request)
     {
-        // $this->validateApiKey(); // Validate api key TODO: temp remove to proceed with the integration and stuff...
+        $this->validateApiKey(); // Validate api key
         $validatedData = $request->validate([
             'uid' => 'required|string',
             'name' => 'required|string|max:255',

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Verse extends Model
 {
     use HasFactory;
+
+
+    public function notebook()
+    {
+        return $this->hasMany(Notebook::class, 'verse_id');
+    }
 }
