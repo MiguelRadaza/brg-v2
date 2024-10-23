@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         return $request->user();
     });
 
-    Route::get('verses', action: function ($token): bool|string {
+    Route::get('verses', action: function (): bool|string {
         // $tokenValue = "brg-app-cho:copyright@kingstech2024";
         // $hashedToken = "YnJnLWFwcC1jaG86Y29weXJpZ2h0QGtpbmdzdGVjaDIwMjQ=";
 
